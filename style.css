@@ -36,6 +36,7 @@ header .container {
 header nav {
   display: flex;
   align-items: center;
+  position: relative;
 }
 header nav img {
   width: 100%;
@@ -43,10 +44,13 @@ header nav img {
 }
 header nav > * {
   margin-left: 16px;
-  cursor: pointer;
 }
 header nav a:hover {
   text-decoration: underline;
+}
+header nav .google__application__toggle,
+header nav .google__user__toggle {
+  cursor: pointer;
 }
 header nav .google__application__toggle {
   width: 35px;
@@ -66,6 +70,176 @@ header nav .google__user__toggle {
   background-color: #004d40;
   color: #fff;
   border-radius: 50%;
+}
+header nav .google__modal {
+  margin: 0;
+  width: 328px;
+  height: 448px;
+  overflow-y: scroll;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 6px #cccccc;
+  border-radius: 8px;
+  padding: 20px;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0;
+  transition: all 0.15s ease;
+}
+header nav .google__modal::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+header nav .google__modal::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(128, 128, 128, 0);
+  border-radius: 10px;
+}
+
+/* Handle */
+header nav .google__modal::-webkit-scrollbar-thumb {
+  background: #b0b0be;
+  border-radius: 10px;
+}
+
+header nav .google__modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+header nav .google__modal * {
+  margin: 0;
+}
+header nav .google__modal .google__products {
+  display: grid;
+  grid-template-columns: repeat(3, 84px);
+  justify-content: space-between;
+  row-gap: 16px;
+}
+header nav .google__modal .google__products li {
+  width: 84px;
+  height: 84px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+}
+header nav .google__modal .google__products li:hover {
+  background-color: #eeeeff;
+}
+header nav .google__modal .google__products li .products__icon {
+  width: 100%;
+  height: 64px;
+  background-image: url("https://ssl.gstatic.com/gb/images/p1_cfd8cf40.png");
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+header nav .google__modal .google__products li.accounts .products__icon {
+  background-position-y: -2137px;
+}
+header nav .google__modal .google__products li.search .products__icon {
+  background-position-y: -894px;
+}
+header nav .google__modal .google__products li.maps .products__icon {
+  background-position-y: -1311px;
+}
+header nav .google__modal .google__products li.youtube .products__icon {
+  background-position-y: -2826px;
+}
+header nav .google__modal .google__products li.play .products__icon {
+  background-position-y: -1035px;
+}
+header nav .google__modal .google__products li.news .products__icon {
+  background-position-y: -1583px;
+}
+header nav .google__modal .google__products li.gmail .products__icon {
+  background-position-y: -2758px;
+}
+header nav .google__modal .google__products li.meet .products__icon {
+  background-position-y: -1171px;
+}
+header nav .google__modal .google__products li.contacts .products__icon {
+  background-position-y: -1932px;
+}
+header nav .google__modal .google__products li.drive .products__icon {
+  background-position-y: -1863px;
+}
+header nav .google__modal .google__products li.calendar .products__icon {
+  background-position-y: -1518px;
+}
+header nav .google__modal .google__products li.translate .products__icon {
+  background-position-y: -2001px;
+}
+header nav .google__modal .google__products li.photos .products__icon {
+  background-position-y: -69px;
+}
+header nav .google__modal .google__products li.duo .products__icon {
+  background-position-y: -1794px;
+}
+header nav .google__modal .google__products li.shopping .products__icon {
+  background-position-y: -1380px;
+}
+header nav .google__modal .google__products li.docs .products__icon {
+  background-position-y: -690px;
+}
+header nav .google__modal .google__products li.sheets .products__icon {
+  background-position-y: -2553px;
+}
+header nav .google__modal .google__products li.slides .products__icon {
+  background-position-y: 0;
+}
+header nav .google__modal .google__products li.books .products__icon {
+  background-position-y: -621px;
+}
+header nav .google__modal .google__products li.hangouts .products__icon {
+  background-position-y: -2415px;
+}
+header nav .google__modal .google__products li.keep .products__icon {
+  background-position-y: -483px;
+}
+header nav .google__modal .google__products li.jamboard .products__icon {
+  background-position-y: -1242px;
+}
+header nav .google__modal .google__products li.earth .products__icon {
+  background-position-y: -207px;
+}
+header nav .google__modal .google__products li.collections .products__icon {
+  background-position-y: -2346px;
+}
+header nav .google__modal .google__products li.arts .products__icon {
+  background-position-y: -828px;
+}
+header nav .google__modal .google__products li.google__ads .products__icon {
+  background-position-y: -1449px;
+}
+header nav .google__modal .google__products li.podcasts .products__icon {
+  background-position-y: -345px;
+}
+.btn__center__container {
+  margin-top: 28px !important;
+  text-align: center;
+}
+a.btn__more {
+  background-color: #fff;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #1a73e8;
+  display: inline-block;
+  font: 500 14px/16px "Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+  margin: 16px 0 20px 0;
+  max-width: 265px;
+  outline: 0;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  white-space: normal;
+  width: auto;
+}
+a.btn__more:hover {
+  text-decoration: none;
+  background-color: #f8fbff;
+  border-color: #cce0fc;
 }
 section {
   flex-grow: 1;
@@ -132,6 +306,7 @@ section .input__container .delete__text__icon {
   position: relative;
   transition: all 0.25s ease;
   opacity: 0;
+  pointer-events: none;
 }
 section .input__container input {
   margin-right: 8px;
@@ -149,8 +324,9 @@ section .input__container .delete__text__icon::after {
   height: 75%;
   background: #dfe1e5;
 }
-section .input__container input:focus ~ .delete__text__icon {
-  opacity: 1;
+.delete__text__icon.show {
+  opacity: 1 !important;
+  pointer-events: auto !important;
 }
 section .input__container .delete__text__icon img,
 section .input__container .input__sound__icon img {
