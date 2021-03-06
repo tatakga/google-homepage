@@ -17,6 +17,10 @@ input.addEventListener("input", function () {
   });
 });
 
-googleProducts.addEventListener("click", function () {
-  googleModal.classList.toggle("show");
+document.body.addEventListener("click", function (e) {
+  if (e.target.matches("img") || e.target.matches(".google__application__toggle")) {
+    googleModal.classList.toggle("show");
+  } else {
+    googleModal.classList.remove("show");
+  }
 });
