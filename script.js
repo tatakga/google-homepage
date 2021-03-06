@@ -18,7 +18,7 @@ input.addEventListener("input", function () {
 });
 
 document.body.addEventListener("click", function (e) {
-  if (e.target.matches("img") || e.target.matches(".google__application__toggle")) {
+  if (e.target.matches(".google__modal__btn__image") || e.target.matches(".google__application__toggle")) {
     googleModal.classList.toggle("show");
   } else {
     googleModal.classList.remove("show");
